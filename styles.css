@@ -1,0 +1,54 @@
+:root{color-scheme:light;--paper:#f7f2e5;--ink:#1b2922;--soft:#4d5e53;--forest:#153c30;--green:#dce8cc;--line:#c3c9b6;--sun:#f6c86e;--mono:ui-monospace,Menlo,monospace}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:1rem/1.55 system-ui,sans-serif}
+.wrap{width:min(72rem,calc(100% - 2.5rem));margin-inline:auto}
+[hidden]{display:none!important}
+:focus-visible{outline:3px solid #a03f17;outline-offset:4px}
+a{color:inherit;text-underline-offset:.2em}
+.skip{position:absolute;top:.6rem;left:.6rem;background:white;padding:.6rem;transform:translateY(-160%)}
+.skip:focus{transform:none}
+.mast,footer,.report-head,.quick,.search-row{display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+.mast,footer,.report-head{justify-content:space-between}
+.mast,footer{border-block-end:1px solid var(--line);padding-block:1rem}
+.brand{font:800 1.3rem/1.2 system-ui;letter-spacing:.08em}
+.brand span{color:#a03f17}
+.edition,.eyebrow,.quick>span,footer>span{font:700 .74rem/1.4 var(--mono);letter-spacing:.13em;color:var(--soft)}
+.intro{padding-block:clamp(2rem,6vw,5rem) 1.5rem}
+h1,h2,h3,p{margin:0}h1,h2{font-family:Georgia,serif}
+h1{font-size:clamp(3rem,8vw,7rem);line-height:.95;letter-spacing:-.065em;margin-block:.55rem 1rem}h1 em{color:#386347;font-weight:400}
+.intro p{max-width:38rem;color:var(--soft)}
+#search{max-width:44rem}#search label{font-weight:700;display:block;margin-bottom:.35rem}
+button,input{font:inherit}button{cursor:pointer}
+input[type=search],button{border:1px solid var(--line);border-radius:.45rem;padding:.62rem .85rem;min-height:44px}
+input[type=search]{flex:1;min-width:12rem;background:#fffdf6;color:var(--ink)}
+button{background:#fffdf6;color:var(--forest);font-weight:700}
+button:hover{background:var(--green)}
+button[type=submit]{background:var(--forest);color:white}
+button[type=submit]:hover{background:#275844}
+.quick{gap:.45rem;margin-block:.75rem}.quick>span{margin-right:.45rem}
+.quick button{border-radius:2rem;font-size:.86rem}
+#status{min-height:2rem;color:var(--soft);margin-block:1rem}
+#choices ul{list-style:none;padding:0;display:flex;gap:.6rem;flex-wrap:wrap}
+#report{margin-block:1rem 3rem}
+.report-head{border-top:2px solid var(--forest);padding-block:1rem}
+.report-head h2{font-size:clamp(2rem,5vw,3.5rem);line-height:1.05}
+#location{color:var(--soft)}
+fieldset{border:1px solid var(--line);border-radius:.5rem;margin:0;padding:.2rem .65rem .45rem}
+fieldset label{display:inline-flex;align-items:center;min-height:34px;margin-right:.35rem}
+.panels{display:grid;grid-template-columns:1.55fr 1fr;gap:1rem}
+.now,.country,.forecast{padding:clamp(1rem,3vw,2rem);border-radius:.8rem}
+.now{position:relative;isolation:isolate;background:var(--forest);color:white;overflow:hidden}
+.now h3,.country h3,.forecast h3{font-size:1rem;letter-spacing:.035em}
+#sky-mark{position:absolute;z-index:-1;right:-3rem;top:-4rem;width:15rem;aspect-ratio:1;border-radius:50%;background:repeating-radial-gradient(circle,transparent 0 10px,#84ab8e 11px 12px);opacity:.28}
+#temperature{font:400 clamp(3.5rem,9vw,6rem)/1 Georgia,serif;color:var(--sun);margin-block:.4rem}
+#condition{font-weight:700}#observed{color:#d6e8dc;font-size:.86rem}
+.metrics,.country dl{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.7rem;margin-block:1rem 0}
+dl div{border-top:1px solid currentColor;padding-top:.4rem}dt{font-size:.82rem}dd{margin:0;font-weight:700;overflow-wrap:anywhere}
+.country{background:var(--green)}.country h4{font:400 2rem/1.12 Georgia,serif;margin:.7rem 0}
+.forecast{border:1px solid var(--line);margin-top:1rem;background:#fffdf6}
+.forecast ol{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:.9rem}
+.forecast li{border-top:1px solid var(--line);padding-top:.55rem;margin-top:.65rem}
+.forecast time,.forecast strong{display:block}.forecast span{font-size:.84rem;color:var(--soft)}
+footer{border-top:1px solid var(--line);font-size:.88rem}
+@media(max-width:43rem){.panels{grid-template-columns:1fr}.forecast ol{grid-template-columns:repeat(auto-fit,minmax(8rem,1fr))}}
+@media(max-width:28rem){.report-head{align-items:flex-start}.search-row button{width:100%}}

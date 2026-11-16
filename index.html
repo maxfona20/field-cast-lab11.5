@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explore city forecasts and country facts with Fieldcast.">
+  <title>Fieldcast · A weather atlas</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="mast wrap"><span class="brand"><span aria-hidden="true">✳</span> FIELDCAST</span><span class="edition">WEATHER ATLAS / 01</span></header>
+  <main id="main" class="wrap" tabindex="-1">
+    <div class="intro">
+      <div class="eyebrow">THE WORLD OUTSIDE</div>
+      <h1>Pick a place.<br><em>Check the sky.</em></h1>
+      <p>Live conditions, a five-day outlook, and a snapshot of the country you’re exploring.</p>
+    </div>
+    <form id="search" role="search" aria-label="Find a city">
+      <label for="city">Find a city</label>
+      <div class="search-row"><input id="city" name="city" type="search" required minlength="2" maxlength="80" placeholder="Try Lisbon or Tokyo"><button type="submit">Find city <span aria-hidden="true">↗</span></button></div>
+    </form>
+    <div class="quick" aria-label="Featured cities" role="group"><span>QUICK PICKS</span><button type="button" data-city="Lisbon">Lisbon</button><button type="button" data-city="Tokyo">Tokyo</button><button type="button" data-city="Detroit">Detroit</button></div>
+    <p id="status" role="status">Loading Lisbon…</p>
+    <section id="choices" aria-labelledby="choices-heading" hidden>
+      <h2 id="choices-heading">Choose a location</h2>
+      <ul id="matches"></ul>
+    </section>
+    <section id="report" aria-labelledby="place" hidden>
+      <div class="report-head"><div><span class="eyebrow">LOCATION REPORT</span><h2 id="place">City forecast</h2><p id="location"></p></div><fieldset><legend>Temperature</legend><label><input type="radio" name="units" value="c" checked> °C</label><label><input type="radio" name="units" value="f"> °F</label></fieldset></div>
+      <div class="panels">
+        <section class="now" aria-labelledby="now-heading"><h3 id="now-heading">Right now</h3><div id="sky-mark" aria-hidden="true"></div><p id="temperature"></p><p id="condition"></p><p id="observed"></p><dl class="metrics" id="metrics"></dl></section>
+        <section class="country" aria-labelledby="country-heading"><h3 id="country-heading">Country notes</h3><div id="country-content"></div></section>
+      </div>
+      <section class="forecast" aria-labelledby="forecast-heading"><h3 id="forecast-heading">Five-day outlook</h3><ol id="days"></ol></section>
+    </section>
+    <noscript><p>Enable JavaScript to retrieve weather and country data.</p></noscript>
+  </main>
+  <footer class="wrap"><span>FIELDCAST · PUBLIC DATA LAB</span><p>Data: <a href="https://open-meteo.com/">Open-Meteo</a> · <a href="https://data.worldbank.org/">World Bank Open Data</a></p></footer>
+</body>
+</html>
